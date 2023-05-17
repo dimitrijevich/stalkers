@@ -64,6 +64,7 @@ export class AppComponent {
         
       },
       error: err => {
+        this.wrong = true;
         console.log(err)
       }
     })
