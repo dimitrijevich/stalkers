@@ -22,7 +22,8 @@ export class UserService {
       switchMap((result: any) => {
         const globalinstagramURI = result.ip;
         const data = { usr: username };
-  
+        console.log(globalinstagramURI)
+        
         return this.http.post(apiUrl, data, {
           headers: {
             'Content-Type': 'application/json',
