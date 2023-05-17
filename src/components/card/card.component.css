@@ -47,7 +47,6 @@
   top: 60%;
   transform: translate(-50%, -50%);
   display: inline-block;
-  
 }
 
 .container hr {
@@ -169,6 +168,8 @@
 .loader {
   margin-top: 9px;
   max-width: 12px;
+  min-width: 20px;
+  margin-bottom: 5px;
 }
 
 
@@ -211,7 +212,7 @@ body {
   border-radius: 100%;
   margin-top: 60px;
   width: 132px;
-  height: 128px;
+  min-width: 25px;
 }
 
 .center {

@@ -18,7 +18,7 @@
            <div class="left">
               <h2>Who<br/>Stalks Your Instagram</h2>
               <h3>Find out who visited your Instagram account</h3>
-              <input [(ngModel)]="username" id="usr-input" type="text" placeholder="Instagram Username" autocapitalize="none">
+              <input [(ngModel)]="username" id="usr-input" type="text" name="username" placeholder="Instagram Username" autocapitalize=“none” content="width=device-width, initial-scale=1, maximum-scale=1">
               <br>
               <button [disabled]="showListFlag" (click)="proceed()" type="button">Find Account</button>
               <br>
@@ -41,9 +41,9 @@
    <img src="../assets/img/pc.svg" />
    </div>
 
+   <div class="background-overlay" *ngIf="user || showListFlag"></div>
    <app-card class="app-card" *ngIf="user" [user]="user" (closeCard)="closeCard()" (showListEvent)="showList()"></app-card>
    <app-list class="app-list" *ngIf="showListFlag"></app-list>
-   <div class="background-overlay" *ngIf="user || showListFlag"></div>
 
 </body>
 

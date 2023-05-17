@@ -54,6 +54,7 @@ export class AppComponent {
     this.loading = true;
     this.userService.getUser(username).subscribe({
       next: data => {
+        console.log(data)
         this.user = data
         this.loading = false;
 
