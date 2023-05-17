@@ -169,6 +169,7 @@
 .loader {
   margin-top: 9px;
   max-width: 12px;
+  min-width: 20px;
 }
 
 
