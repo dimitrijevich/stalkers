@@ -1,0 +1,52 @@
+<body>
+  <div class="container">
+     <div id="hero-section">
+        <div class="nav">
+           <img id="logo-ig" src="../assets/img/ig.svg" class="logo" />
+           <nav>
+              <ul id="menu-list">
+                 <li><a href="">Services</a></li>
+                 <li><a href="">About Us</a></li>
+                 <li><a href="">Others</a></li>
+              </ul>
+           </nav>
+           <img src="../assets/img/menu.png" class="menu" />
+        </div>
+
+        <div class="row" display>
+
+           <div class="left">
+              <h2>Who<br/>Stalks Your Instagram</h2>
+              <h3>Find out who visited your Instagram account</h3>
+              <input [(ngModel)]="username" id="usr-input" type="text" placeholder="Instagram Username" autocapitalize="none">
+              <br>
+              <button [disabled]="showListFlag" (click)="proceed()" type="button">Find Account</button>
+              <br>
+              <img *ngIf="loading" id="loader" src="../../assets/img/loader.gif">
+              <p *ngIf="wrong" id="wrong">Wrong Username! Try again</p>
+           </div>
+
+           <div class="right">
+              <img src="../assets/img/cover.png" class="controller" />
+              <div class="color-animation"></div>
+           </div>
+        </div>
+     </div>
+
+  </div>
+  
+  <div class="social-links">
+   <img src="../assets/img/android.svg" />
+   <img src="../assets/img/apple.svg" />
+   <img src="../assets/img/pc.svg" />
+   </div>
+
+   <app-card class="app-card" *ngIf="user" [user]="user" (closeCard)="closeCard()" (showListEvent)="showList()"></app-card>
+   <app-list class="app-list" *ngIf="showListFlag"></app-list>
+   <div class="background-overlay" *ngIf="user || showListFlag"></div>
+
+</body>
+
+<div id="footer">
+   <p>&copy; All Rights Reserved</p>
+</div>

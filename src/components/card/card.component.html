@@ -1,0 +1,68 @@
+<body>
+    <div class="container">
+        <div class="first-grid element-animation">
+            <div  class="card color-card">
+
+                <ul>
+                    <li (click)="close()" id="back-arrow"><i class="fas fa-arrow-left i-l w"></i></li>
+                    <li><i class="fas fa-ellipsis-v i-r w"></i></li>
+                    <li><i class="far fa-heart i-r w"></i></li>
+                </ul>
+
+                <img [src]="transformedImageUrl" id="pr-img" alt="profile-pic" class="profile"/>
+
+                <h1 id="username" class="title">{{user?.username}}</h1>
+
+                <p id="full-name">{{user?.full_name}}</p>
+
+                <div id="biography" class="desc top">
+                    <p>{{user?.biography}}</p>
+                </div>
+
+                <div id="process">
+                    <button *ngIf="!loader" (click)="load()" id="main-btn" class="btn color top">Find Stalkers</button>
+                    <img class="loader" *ngIf="loader" src="../../assets/img/loader.gif"/>
+                    <p *ngIf="loader">{{processingMessage}}</p>
+                </div>
+        
+                <hr />
+
+                <div class="engagement">
+                    <div class="content">
+
+                        <div class="second-grid">
+                            <button class="icon-color circular">
+                                <i class="fa-solid fa-image fa-xl"></i>
+                            </button>
+                            <h5 class="title">Posts</h5>
+                            <p id="number-of-posts" class="followers">{{ getFormattedCount(user?.edge_owner_to_timeline_media.count) }}</p>
+                        </div>
+
+                        <div class="second-grid">
+                            <button class="icon-color circular">
+                                <i class="fa-solid fa-users fa-xl"></i>                      
+                            </button>
+                            <h5 class="title">Followers</h5>
+                            <p id="followers" class="followers">{{ getFormattedCount(user?.edge_followed_by.count) }}</p>
+                        </div>
+
+                        <div class="second-grid">
+                            <button class="icon-color circular">
+                                <i class="fa-solid fa-user-plus fa-xl"></i>                      
+                            </button>
+                            <h5 class="title">Following</h5>
+                            <p id="following" class="followers">{{ getFormattedCount(user?.edge_follow.count) }}</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+
+
