@@ -151,12 +151,5 @@ button:hover {
      max-width: 300px;     
 }
 
-.picture {
-     min-width: 10px;
-     height: 10px;
-     border-radius: 50%;
-     object-fit: cover;
-     filter: blur(5px);
-}
       
 }
